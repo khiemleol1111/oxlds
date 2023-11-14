@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer base {
+  h1 {
+      font-size: 48px;
+      font-weight: 600;
+  }
+  
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+}
+
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+ 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #100c0c;
+  color: #EDEAF1;
+}
+
+.active-sidebar{
+  color: #2eb174;
+  background-color: #161617;
+}
+.sidebar-isCurrent::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: 4px;
+  background: #2eb174;
+  border-radius: 8px;
 }
