@@ -5,7 +5,7 @@ export default function DocumentLayout({ children }) {
   return (
     <>
       <SmallNavbar></SmallNavbar>
-      <main className="">{children}</main>
+      {children}
     </>
   )
 }

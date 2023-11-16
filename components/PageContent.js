@@ -1,16 +1,22 @@
+import Link from "next/link";
 
-function PageContent() {
+function PageContent({sections}) {
+    console.log(sections)
+  
     return(
        
-        <div className="fixed right-0 top-10 md:w-[256px] p-4 border-[1px] border-neutral-800 rounded-lg">
-            <ul>
-                <h4>On this page</h4>
-                <li>Usable for everyone</li>
-                <li>Building inclusive experiences</li>
-                <li>Managing focus to support mercha</li>
-                <li>Limiting non-standard interactio</li>
-                <li>Assistive technology support</li>
-                <li>Coding standards</li>
+        <div className="sticky text-xs top-[84px] md:flex-[0_0_256px] p-4  border-[1px] border-neutral-800 rounded-lg">
+            <ul className="flex flex-col gap-2">
+                <span className="text-sm mb-2">On this page</span>
+                {sections.map((section) => (
+                    
+                    <li key={section.id}>
+                        <Link href={`#${section.id}`} smooth="true" duration={500}>
+                        {section.label}
+                        </Link>
+                        
+                    </li>
+                    ))}
             </ul>
         </div>
     )

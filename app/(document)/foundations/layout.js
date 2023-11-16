@@ -4,10 +4,10 @@ import SmallNavbar from "@/components/SmallNavbar";
 
 export default function DocumentLayout({ children }) {
   return (
-    <div className="flex">
+    <main className="flex flex-grow">
       <Sidebar></Sidebar>
       {children}
       
-    </div>
+    </main>
   )
 }

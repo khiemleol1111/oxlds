@@ -68,3 +68,8 @@ body {
   background: #2eb174;
   border-radius: 8px;
 }
+
+
+.sidebar {
+  height: calc(100vh - 60px);
+}

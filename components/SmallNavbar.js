@@ -4,7 +4,7 @@ import Image from "next/image";
 function SmallNavbar() {
     return(
         
-<nav className="bg-neutral900 fixed w-full z-20 top-0 left-0 text-text1 border-b-[1px] border-neutral-800">
+<nav className="bg-neutral900 z-20 sticky w-full top-0 left-0 text-text1 border-b-[1px] border-neutral-800">
   <div className="flex flex-wrap items-center justify-between mx-auto px-10 h-[60px]">
   <a href="#" className="flex items-center">
       <Image src="/oxl-logo.svg" width={80} height={40} alt="Oxalis Logo"></Image>
