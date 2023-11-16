@@ -8,7 +8,7 @@ import SmallNavbar from "@/components/SmallNavbar"
 export default function Page() {
   return (
     <main className="min-h-screen">
-      <SmallNavbar></SmallNavbar>
+      <Navbar></Navbar>
       <Hero></Hero>
       <MainFeature></MainFeature>
       <Footer></Footer>

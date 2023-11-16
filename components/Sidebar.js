@@ -144,9 +144,11 @@
 // components/Sidebar.js
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from "next/navigation";
 
-const SidebarItem = ({ item, pathname }) => {
+const SidebarItem = ({ item }) => {
   const [isExpanded, setExpanded] = useState(false);
+  const pathname = usePathname();
 
   const toggleExpand = () => {
     setExpanded(!isExpanded);
