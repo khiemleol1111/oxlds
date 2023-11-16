@@ -1,7 +1,30 @@
+"use client"
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 
 function Navbar() {
+  const pathname = usePathname();
+
+  const navLinks = [
+    {
+      name: "Home",
+      link: "/"
+    },
+    {
+      name: "Foundations",
+      link: "/foundations"
+    },
+    {
+      name: "Design",
+      link: "/design"
+    },
+    {
+      name: "Develop",
+      link: "/develop"
+    },
+  ]
     return(
         
 <nav className="bg-neutral900 fixed w-full z-20 top-0 left-0 text-text1">
@@ -19,20 +42,19 @@ function Navbar() {
     </button>
   </div>
   <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
-      <li>
-        <a href="#" className="block py-2 pl-3 pr-4 text-text1 rounded md:bg-transparent md:text-primary md:p-0 " aria-current="page">Home</a>
-      </li>
-      <li>
-        <a href="/foundations" className="block py-2 pl-3 pr-4 text-text1 rounded hover:text-primary md:hover:bg-transparent md:p-0 ">Foundation</a>
-      </li>
-      <li>
-        <a href="#" className="block py-2 pl-3 pr-4 text-text1 rounded hover:text-primary md:hover:bg-transparent  md:p-0 ">Design</a>
-      </li>
-      <li>
-        <a href="#" className="block py-2 pl-3 pr-4 text-text1 rounded hover:text-primary md:hover:bg-transparent  md:p-0 ">Develop</a>
-      </li>
-    </ul>
+    
+
+    <ul className=" flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 ">
+                {navLinks.map((navLink) => (
+                    
+                    <li key={navLink.name} className="relative">
+                        <Link href={`${navLink.link}`} smooth="true" duration={500} className={ `${pathname === `${navLink.link}` ? 'text-primary' : 'text-text1 rounded hover:text-primary'}  block py-2 pl-3 pr-4 text-text1 rounded hover:text-primary md:hover:bg-transparent  md:p-0`}>
+                        {navLink.name}
+                        </Link>
+                        
+                    </li>
+                    ))}
+            </ul>
   </div>
   </div>
 </nav>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 function PageContent({sections}) {
-    console.log(sections)
   
     return(
        
